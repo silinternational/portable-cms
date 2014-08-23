@@ -29,7 +29,7 @@ class Utils
      */
     public static function getParam($name, $default=null)
     {
-        $method = strtoupper($_REQUEST['REQUEST_METHOD']);
+        $method = strtoupper($_SERVER['REQUEST_METHOD']);
 
         if($method == 'GET'){
             if(isset($_GET[$name])){
