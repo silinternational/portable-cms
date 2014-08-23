@@ -70,7 +70,6 @@ function actionNewsLetter(){
         fclose($fh);
         if($fp){
             include __DIR__.'/partials/newsletter_success.php';
-
         } else {
             include __DIR__.'/partials/newsletter_failure.php';
         }

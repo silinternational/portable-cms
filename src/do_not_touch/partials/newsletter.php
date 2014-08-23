@@ -1,5 +1,6 @@
 <h2><?php echo Utils::t('Newsletter Signup'); ?></h2>
-<form role="form" method="POST" action="/?action=newsletter">
+<form role="form" method="POST" action="/">
+    <input type="hidden" name="action" value="newsletter" />
     <div class="form-group">
         <label for="inputName"><?php echo Utils::t('Name'); ?></label>
         <input type="name" class="form-control" name="name" id="inputName" placeholder="">
