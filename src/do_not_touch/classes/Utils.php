@@ -43,4 +43,28 @@ class Utils
 
         return $default;
     }
+    
+    /**
+     * Log access for this page
+     */
+    public static function logAccess() 
+    {
+    	$data = array(date("Y-m-d H:i:s T"), Session::getID(), 
+    			$_SERVER['REQUEST_URI'], $_SERVER['HTTP_USER_AGENT']);
+    	$fh = fopen(__DIR__.'/../../accesslog.csv','a+');
+    	$fp = fputcsv($fh, $data);
+    	fclose($fh);
+    }
+    
+    /**
+     * Logs download requests
+     * @param string $filename
+     */
+    public static function logDownload($filename)
+    {
+    	$data = array(date("Y-m-d H:i:s T"), Session::getID(), $filename); 
+    	$fh = fopen(__DIR__.'/../../downloads.csv','a+');
+    	$fp = fputcsv($fh, $data);
+    	fclose($fh);
+    }
 }
