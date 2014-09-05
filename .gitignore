@@ -1,6 +1,8 @@
 .vagrant/
+accesslog.csv
 newsletter.csv
 .idea/
+downloads.csv
 atlassian-ide-plugin.xml
 /.settings
 /.buildpath
